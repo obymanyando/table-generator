@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table Generator</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="page__header">
+            <div class="page__title">HTML Table Generator</div>
+            <form class="page__form">
+                <div class="page__inputGoup">
+                    Number of rows: <input type="number" min="1" class="row" id="rowInput">
+                    Number of columns: <input type="number" min="1" id="colInput">
+                    Table width in percentage: <input type="number" min="1">
+                    Border width in pixels: <input type="number" min="1">
+                </div>
+                <div class="page__colorGroup">
+                    Table background color: <input type="color">
+                    Head background color: <input type="color">
+                    Body background color: <input type="color">
+                    Border color: <input type="color">
+                    Font color: <input type="color">
+                </div>
+                <div class="page__selectGroup">
+                    Border collapse <input type="checkbox" value="border" id="checkBox">
+                    Font type <select name="fontType">
+                        <option value="font 1"></option>
+                        <option value="font 2"></option>
+                        <option value="font 3"></option>
+                    </select>
+                    Font weight <select name="fontWeight">
+                        <option value="100"></option>
+                        <option value="200"></option>
+                        <option value="300"></option>
+                    </select>
+                    Align text <select name="textAlignment">
+                        <option value="Left"></option>
+                        <option value="Right"></option>
+                        <option value="Center"></option>
+                    </select>
+                    Font size: <input type="number">
+                </div>
+            </form>
+            <div class="page__button">
+                <button class="page__btn--success">Generate Table</button>
+                <button class="page__btn--grey">Get Code</button>
+            </div>
+
+
+        </div> <!-- page__header ends here  -->
+
+        <div id="table-container">
+            <table class="page__table colcol">
+
+            </table>
+        </div>
+
+    </div> <!-- container ends here  -->
+
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        sans-serif;
+    /* to smooth fonts */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.page__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.page__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    background-color: burlywood;
+}
+
+.page__title {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 30px auto;
+}
+
+.page__inputGoup {
+    justify-content: space-between;
+}
+
+input {
+    height: 25px;
+}
+
+.page__colorGroup {
+    margin: 20px auto;
+}
+
+.page__button {
+    display: flex;
+    flex-direction: row;
+    margin: 20px auto;
+    align-items: flex-end;
+}
+
+.page__btn--success {
+    padding: 10px 10px;
+    font-weight: 700;
+    display: inline-block;
+    color: white;
+    background-color: rgb(115, 151, 60);
+    text-align: center;
+    border-radius: 5px;
+    outline: none;
+}
+
+.page__btn--grey {
+    padding: 10px 10px;
+    font-weight: 700;
+    display: inline-block;
+    color: white;
+    background-color: rgb(156, 180, 172);
+    text-align: center;
+    border-radius: 5px;
+    align-items: center;
+    outline: none;
+}
+
+table,
+td,
+th {
+    border: 1px solid blue;
+}
+
+/* fix toggle */
+/* .toggle {
+    border: 1px solid blue;
+} */
+
+.page__table {
+    width: 100%;
+    /* border-collapse: separate; */
+}
+
+th {
+    align-items: center;
+    /* border: 1px solid rgb(0, 119, 255); */
+}
+
+td {
+    align-items: center;
+    /* border: 1px solid rgb(0, 119, 255); */
+    border-collapse: collapse;
+}
+
+td {
+    align-items: center;
+    /* border: 1px solid rgb(0, 119, 255); */
+    border-collapse: collapse;
+}
