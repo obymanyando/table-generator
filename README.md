@@ -1,2 +1,2 @@
-#An HTML Table Generator
-##Built with Vanilla JS
+# An HTML Table Generator
+Built with Vanilla JS
