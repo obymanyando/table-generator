@@ -13,31 +13,44 @@ let tbody = document.createElement('tbody')
 let thead = table.createTHead();
 let trow = thead.insertRow();
 
+let tr = document.createElement('tr')
+
+/*  on window load, check table content */
+//FIX SECOND CLICK
 const clearWindow = () => {
-    if (table.innerHTML != '') {
-        table.innerHTML = ''
-        mainGenerator()
+    if (tbody.innerHTML != '') {
+        tbody.innerHTML = ''
+        genereteRows();
+        // generateTableHead();
+
     } else {
-        mainGenerator()
+        tbody.innerHTML = ''
+        generateTableHead();
+        genereteRows();
+        clearRowColumnInput();
     }
 }
 
-const mainGenerator = () => {
-    generateTableHead();
-    genereteRows();
-    console.log(table)
-}
+/* onclick of Generate button, call 3 functions*/
+// const mainGenerator = () => {
+//     clearRowColumnInput();
+// }
+generateTable = () => {
 
+}
 /* function to generate table header */
 const generateTableHead = () => {
-    for (let i = 0; i < column.value; i++) {
+    //ADD TR HERE AND APPEND ACCORDINGLY, THEN REMOVE METHODS ABOVE
+    for (let i = 1; i <= column.value; i++) {
         let th = document.createElement('th');
-        let text = document.createTextNode('HEAD');
-        console.log('Why my head is not working')
+        let text = document.createTextNode(`HEADER ${i}`);
+        thead.setAttribute('id', 'head__Bg')
         th.appendChild(text);
         trow.appendChild(th);
+        thead.appendChild(trow)
     }
     thead.style.backgroundColor = '#a2a8a3';
+    table.appendChild(thead)
 }
 
 /* function to generate table rows ,<tr>, and populate them with data ,<td>, */
@@ -48,7 +61,7 @@ const genereteRows = () => {
 
         for (let j = 0; j < column.value; j++) {
             let td = document.createElement('td')
-            // let text = document.createTextNode('Value');
+            td.setAttribute('class', 'tdClass')
             td.textContent = 'Value'
             tr.append(td)
         }
@@ -56,21 +69,86 @@ const genereteRows = () => {
     }
     table.appendChild(tbody)
 }
-console.log(table)
 
-function collapseBorder() {
+const clearRowColumnInput = () => {
+    document.querySelector('#rowInput').value = ''
+    document.querySelector('#colInput').value = ''
+}
 
+const collapseBorder = () => {
     if (collapse.checked) {
         table.style.borderCollapse = 'collapse';
-        console.log('blah blah')
     } else {
         // table.style.borderCollapse = 'initia';
         table.style.border = '1px solid #ff0000';
-        console.log('blah')
     }
 }
 
-/* event listeners */
+//select all styling elements
+const borderWidth = document.getElementById('border__width')
+const tableBg = document.getElementById('table__Bg')
+const headBg = document.getElementById('head__Gb')
+const tableWidth = document.getElementById('table__width')
+const borderCol = document.getElementById('border__color')
+const fontType = document.getElementById('font__type')
+const fontWeight = document.getElementById('font__weight')
+const textAlign = document.getElementById('text__align')
+const fontSize = document.getElementById('font__size')
+const fontColor = document.getElementById('font__color')
+
+// functions for color manipulations
+const chooseBorderWidth = () => {
+    table.style.borderWidth = borderWidth.value + 'px';
+}
+
+const choosetableBg = () => {
+    table.style.backgroundColor = tableBg.value;
+}
+
+const chooseHeadBg = () => {
+    thead.style.backgroundColor = headBg.value;
+}
+
+const chooseTableWidth = () => {
+    table.style.width = tableWidth.value + '%';
+}
+
+// finish up bordercolor...find proper target
+const chooseBorderColor = () => {
+    table.style.border = '3px solid red'
+    table.style.borderColor = 'red';
+}
+
+// functions for font manipulation
+const chooseFontType = () => {
+    table.style.fontFamily = fontType.value;
+}
+
+const chooseFontWeight = () => {
+    table.style.fontWeight = fontWeight.value;
+}
+
+const chooseTextAlign = () => {
+    table.style.textAlign = textAlign.value;
+}
+const chooseFontSize = () => {
+    table.style.fontSize = fontSize.value + 'px';
+}
+const chooseFontColor = () => {
+    table.style.color = fontColor.value;
+}
+console.log(headBg)
+
+/* all event listeners */
 collapse.addEventListener('click', collapseBorder)
-/* generate button with two functions */
-generateBtn.addEventListener('click', mainGenerator)
+generateBtn.addEventListener('click', clearWindow)
+borderWidth.addEventListener('change', chooseBorderWidth)
+tableBg.addEventListener('change', choosetableBg)
+headBg.addEventListener('change', chooseHeadBg)
+tableWidth.addEventListener('change', chooseTableWidth)
+borderCol.addEventListener('change', chooseBorderColor)
+fontType.addEventListener('change', chooseFontType)
+fontWeight.addEventListener('change', chooseFontWeight)
+textAlign.addEventListener('change', chooseTextAlign)
+fontSize.addEventListener('change', chooseFontSize)
+fontColor.addEventListener('change', chooseFontColor)

@@ -17,34 +17,69 @@
                 <div class="page__inputGoup">
                     Number of rows: <input type="number" min="1" class="row" id="rowInput">
                     Number of columns: <input type="number" min="1" id="colInput">
-                    Table width in percentage: <input type="number" min="1">
-                    Border width in pixels: <input type="number" min="1">
+                    Table width in percentage: <input type="number" min="10" step="10" id="table__width">
+                    Border width in pixels: <input type="number" min="1" id="border__width">
                 </div>
                 <div class="page__colorGroup">
-                    Table background color: <input type="color">
-                    Head background color: <input type="color">
-                    Body background color: <input type="color">
-                    Border color: <input type="color">
-                    Font color: <input type="color">
+                    <div>
+                        Table background color: <input type="color" id="table__Bg">
+                    </div>
+
+                    <div>
+                        Head background color: <input type="color" id="head__Gb">
+                    </div>
+
+                    <div>
+                        Border color: <input type="color" id="border__color">
+                    </div>
+
+                    <div>
+                        Font color: <input type="color" id="font__color">
+                    </div>
+
                 </div>
                 <div class="page__selectGroup">
-                    Border collapse <input type="checkbox" value="border" id="checkBox">
-                    Font type <select name="fontType">
-                        <option value="font 1"></option>
-                        <option value="font 2"></option>
-                        <option value="font 3"></option>
-                    </select>
-                    Font weight <select name="fontWeight">
-                        <option value="100"></option>
-                        <option value="200"></option>
-                        <option value="300"></option>
-                    </select>
-                    Align text <select name="textAlignment">
-                        <option value="Left"></option>
-                        <option value="Right"></option>
-                        <option value="Center"></option>
-                    </select>
-                    Font size: <input type="number">
+                    <div>
+                        <label for="borderCollapse">Border collapse</label>
+                        <input type="checkbox" value="border" id="checkBox">
+                    </div>
+
+                    <div>
+                        <label for="fontSelect">Font type</label>
+                        <select name="fontType" id="font__type">
+                            <option value="Roboto" selected="selected">Roboto</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Times New Roman">Times</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Bedrock"> Bedrock</option>
+                            <option value="Georgia">Georgia</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="fontWeight">Font weight:</label>
+                        <select name="fontWeight" id="font__weight">
+                            <option value="400">400</option>
+                            <option value="500">500</option>
+                            <option value="600">600</option>
+                            <option value="700">700</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="alignText">Align text:</label>
+                        <select name="textAlignment" id="text__align">
+                            <option value="Left">Left</option>
+                            <option value="Center">Center</option>
+                            <option value="Right">Right</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="fontSize">Font size:</label>
+                        <input type="number" id="font__size">
+                    </div>
+
                 </div>
             </form>
             <div class="page__button">

@@ -31,7 +31,7 @@ body {
 .page__header {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
@@ -40,22 +40,9 @@ body {
 
 .page__title {
     display: flex;
-    align-items: center;
     font-size: 2em;
     font-weight: 700;
     margin: 30px auto;
-}
-
-.page__inputGoup {
-    justify-content: space-between;
-}
-
-input {
-    height: 25px;
-}
-
-.page__colorGroup {
-    margin: 20px auto;
 }
 
 .page__button {
@@ -91,13 +78,12 @@ input {
 table,
 td,
 th {
-    border: 1px solid blue;
+    border: 1px solid rgb(112, 112, 116);
 }
 
-/* fix toggle */
-/* .toggle {
-    border: 1px solid blue;
-} */
+tr:nth-child(even) {
+    background-color: #f2f2f5;
+}
 
 .page__table {
     width: 100%;
@@ -119,4 +105,38 @@ td {
     align-items: center;
     /* border: 1px solid rgb(0, 119, 255); */
     border-collapse: collapse;
+}
+
+.page__form {
+    margin: auto 50px;
+}
+
+.page__inputGoup {
+    justify-content: space-between;
+}
+
+input {
+    height: 25px;
+    width: 70px;
+    margin-right: 50px;
+}
+
+.page__colorGroup {
+    display: flex;
+    margin: 20px auto;
+}
+
+
+
+.page__colorGroup>div {
+    /* margin-right: 10px; */
+}
+
+.page__selectGroup {
+    display: flex;
+    /* margin-right: 10px; */
+}
+
+.page__selectGroup>div {
+    /* margin-right: 10px; */
 }
