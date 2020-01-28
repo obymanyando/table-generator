@@ -25,7 +25,7 @@ body {
 
 .page__container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .page__header {
@@ -90,9 +90,12 @@ tr:nth-child(even) {
     /* border-collapse: separate; */
 }
 
+.page__selectGroup div {
+    margin-right: 2%;
+}
+
 th {
-    align-items: center;
-    /* border: 1px solid rgb(0, 119, 255); */
+    /* align-items: center; */
 }
 
 td {
